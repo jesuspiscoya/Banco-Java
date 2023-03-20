@@ -1,14 +1,15 @@
 import java.util.*;
 
 public class Operaciones {
+
+    // Creando una variable general----
     double monto = 0;
-    static ArrayList<String> dnis = new ArrayList<>();
-    static ArrayList<String> claves = new ArrayList<>();
-    // static ArrayList<Double> montos = new ArrayList<>();
 
-    public Operaciones() {
-    }
+    // Crear dos ArrayList vacíos para nombres y DNI----
+     ArrayList<String> dnis = new ArrayList<>();
+     ArrayList<String> claves = new ArrayList<>();
 
+    // Creando los getters para que devuelvan el valor de dnis y claves
     public ArrayList<String> getDnis() {
         return dnis;
     }
@@ -17,6 +18,9 @@ public class Operaciones {
         return claves;
     }
 
+
+
+    // Creando los métodos agregar/retiro/sado/mostrar----
     public void agregar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el monto que desea agregar: ");
@@ -24,7 +28,7 @@ public class Operaciones {
     }
 
     public void retiro() {
-        ArrayList<Double> retiros = new ArrayList<>();
+        
         Scanner scanner = new Scanner(System.in);
         double retiro;
         System.out.println("Ingrese el monto que desea retirar: ");
@@ -34,18 +38,12 @@ public class Operaciones {
     }
 
     public void saldo() {
-        ArrayList<Double> saldos = new ArrayList<>();
-        // Scanner scanner = new Scanner(System.in);
-        // double saldo;
         System.out.println("Su saldo es: " + monto);
-        // saldo = scanner.nextDouble();
-        // System.out.println(monto);
     }
 
     public void mostrar() {
         Scanner scanner = new Scanner(System.in);
         int selec;
-
         do {
             System.out.println("---- Bienvenido a new Bank Perú ---- ");
             System.out.println("[1] Depósito");

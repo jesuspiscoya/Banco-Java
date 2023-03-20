@@ -7,13 +7,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Operaciones operaciones = new Operaciones();
-        // App arrayclaves = new App();
-        // App.claves = new ArrayList();
 
-        // App arraydni = new App();
-        // App.dnis = new ArrayList();
-
-        // arraydni.agregar();
 
         // Crear dos ArrayList vacíos para nombres y DNI
         // Solicitar al usuario que ingrese un nombre y un DNI
