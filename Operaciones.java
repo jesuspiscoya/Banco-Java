@@ -1,11 +1,19 @@
 import java.util.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Operaciones {
 
     // Creando una variable general----
     double monto = 0;
 
-    // Crear dos ArrayList vacíos para nombres y DNI----
+    // Creando un objeto para LocalTime----
+    LocalTime hora = LocalTime.now();
+
+    // Creando un objeto para LocalDate----
+    LocalDate fecha = LocalDate.now();
+
+    // Creando dos ArrayList vacíos para dni y claves----
      ArrayList<String> dnis = new ArrayList<>();
      ArrayList<String> claves = new ArrayList<>();
 
@@ -19,28 +27,31 @@ public class Operaciones {
     }
 
 
-
-    // Creando los métodos agregar/retiro/sado/mostrar----
+    // Creando el método agregar----
     public void agregar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el monto que desea agregar: ");
-        monto = scanner.nextDouble();
+        monto += scanner.nextDouble();
+        System.out.println("Agregó el monto de "+ monto + "\n El "+ fecha + " \n A las " + hora);
     }
 
+    // Creando el método retiro----
     public void retiro() {
-        
         Scanner scanner = new Scanner(System.in);
         double retiro;
         System.out.println("Ingrese el monto que desea retirar: ");
         retiro = scanner.nextDouble();
-        System.out.println(retiro);
         monto -= retiro;
-    }
+        System.out.println("Hizo un retiro de "+ retiro + "\n El " + fecha+ "\n A las " + hora);
+        }
 
+    // Creando el método saldo----
     public void saldo() {
         System.out.println("Su saldo es: " + monto);
+        System.out.println(fecha + "\n"+ hora);
     }
 
+    // Creando el método mostrar----
     public void mostrar() {
         Scanner scanner = new Scanner(System.in);
         int selec;
@@ -56,7 +67,7 @@ public class Operaciones {
             switch (selec) {
                 case 1:
                     agregar();
-                    break; 
+                    break;
 
                 case 2:
                     retiro();
@@ -67,6 +78,7 @@ public class Operaciones {
                     break;
 
                 case 4:
+                System.out.println("HASTA LA PRÓXIMA");
                     System.exit(0);
             }
 
