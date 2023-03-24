@@ -11,11 +11,12 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String respuesta;
 
+        System.out.println("\n||---- Bienvenido a new Bank Perú ----||");
+        System.out.println("        <---- REGISTRARSE ---->");
+
         // Esto es el momento de registro ----
         do {
-            System.out.println("||---- Bienvenido a new Bank Perú ----||");
-            System.out.println("        <---- REGISTRARSE ---->         ");
-            System.out.print("Ingrese un DNI: ");
+            System.out.print("\nIngrese un DNI: ");
             String dni = scanner.nextLine();
             System.out.print("Cree una clave: ");
             String clave = scanner.nextLine();
@@ -24,40 +25,40 @@ public class App {
             operaciones.getDnis().add(dni);
             operaciones.getClaves().add(clave);
 
-            System.out.println("--Presione 's' si desea ingresar otro usuario-- \n--Presione cualquier tecla si ya no desea ingresar más usuarios--");
+            System.out.println("\n*Presione 's' si desea ingresar otro usuario*\n*Presione cualquier tecla si ya no desea ingresar más usuarios*");
             respuesta = scanner.nextLine();
         } while (respuesta.equalsIgnoreCase("s"));
 
         // Mostrar los elementos ingresados en los ArrayLists----
-        System.out.println("\nElementos ingresados:");
+        System.out.println("Elementos ingresados:");
         for (int i = 0; i < operaciones.getDnis().size(); i++) {
             System.out.println(operaciones.getDnis().get(i) + " - " + operaciones.getClaves().get(i));
         }
 
         // Esto es el incio de sesión ----
-        System.out.println("||---- Bienvenido a new Bank Perú ----||");
-        System.out.println("         <----INICIAR SESIÓN---->       ");
+        //System.out.println("\n||---- Bienvenido a new Bank Perú ----||");
+        System.out.println("        <---- INICIAR SESIÓN ---->");
 
         // Aquí es el sistema de los 3 intentos para ingresar----
-        int intentos = 1; //
+        int intentos = 0; //
 
-        while (intentos < 4) {
-            System.out.println("Ingrese su DNI: ");
+        while (intentos < 3) {
+            System.out.print("\nIngrese su DNI: ");
             String dni = scanner.nextLine();
 
-            System.out.println("Ingrese su password: ");
+            System.out.print("Ingrese su password: ");
             String clave = scanner.nextLine();
 
             for (int i = 0; i < operaciones.getDnis().size(); i++) {
                 if (operaciones.getDnis().get(i).equals(dni) && operaciones.getClaves().get(i).equals(clave)) {
-                    System.out.println("Bienvenido");
+                    System.out.println("\n        **** BIENVENIDO ****");
                     operaciones.mostrar();
                     break;
                 }
             }
             intentos++;
-            System.out.println("Hay un error en los datos, intente otra vez");
+            System.out.println("\nHay un error en los datos, intente otra vez");
         }
-        System.out.println("El sistema se ah bloqueado");
+        System.out.println("\nEl sistema se ha bloqueado\n");
     }
 }
