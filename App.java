@@ -24,7 +24,7 @@ public class App {
             operaciones.getDnis().add(dni);
             operaciones.getClaves().add(clave);
 
-            System.out.println("¿Desea ingresar otro elemento? (s/n): ");
+            System.out.println("--Presione 's' si desea ingresar otro usuario-- \n--Presione cualquier tecla si ya no desea ingresar más usuarios--");
             respuesta = scanner.nextLine();
         } while (respuesta.equalsIgnoreCase("s"));
 
